@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Citizen Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .login-card { max-width: 400px; margin: auto; }
+    </style>
+</head>
+<body class="d-flex align-items-center min-vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <!-- Header -->
+                        <div class="text-center mb-5">
+                            <i class="fas fa-user-shield fa-3x text-primary mb-4"></i>
+                            <h2 class="fw-bold text-primary mb-1">Admin Login</h2>
+                            <p class="text-muted">Access Grievance Dashboard</p>
+                        </div>
+
+                        <!-- Login Form -->
+                        <form action="/admin" method="POST">
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Username</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <input type="text" name="username" class="form-control" 
+                                           placeholder="Enter username" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                    <input type="password" name="password" class="form-control" 
+                                           placeholder="Enter password" required>
+                                </div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg fw-bold">
+                                    <i class="fas fa-sign-in-alt me-2"></i>
+                                    Login to Dashboard
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Demo Credentials -->
+                        <div class="alert alert-info mt-4 text-center">
+                            <small><strong>Demo Login:</strong><br>
+                            Username: <code>admin</code><br>
+                            Password: <code>admin123</code></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

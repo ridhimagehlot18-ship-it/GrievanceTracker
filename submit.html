@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Complaint - Citizen Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #fdfdff; }
+        .form-card { box-shadow: 0 10px 30px rgba(255,255,255,1); border-radius: 15px; }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card form-card p-4">
+                    <div class="text-center mb-5">
+                        <h2 class="text-primary mb-3">
+                            <i class="fas fa-file-alt me-2"></i>
+                            Submit New Complaint
+                        </h2>
+                        <p class="text-muted">Fill the details below. You'll get a unique ID to track status.</p>
+                    </div>
+
+                    <form action="/submit" method="POST">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Category <span class="text-danger">*</span></label>
+                                <select name="category" class="form-select" required>
+                                    <option value="">Select category</option>
+                                    <option value="Road">Road/Drainage</option>
+                                    <option value="Water">Water Supply</option>
+                                    <option value="Electricity">Electricity/Streetlight</option>
+                                    <option value="Sanitation">Garbage/Sanitation</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Location <span class="text-danger">*</span></label>
+                                <input type="text" name="location" class="form-control" placeholder="e.g., Vaishali Nagar, Jaipur" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Description <span class="text-danger">*</span></label>
+                            <textarea name="description" class="form-control" rows="5" placeholder="Describe the issue in detail..." required></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>
+                                Submit Complaint
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
