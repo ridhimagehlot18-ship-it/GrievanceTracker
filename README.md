@@ -1,16 +1,26 @@
-# 🚀 Grievance Tracker
+from flask import Flask, request, jsonify
 
-Local grievance portal for colleges & communities. **Hack Hazards Hackathon**.
+app = Flask(__name__)
 
-## 📱 Live Demo
-[![Live Demo](https://img.shields.io/badge/Live-Online-brightgreen)](https://YOUR_USERNAME.github.io/grievanceTracker)
+@app.route('/')
+def home():
+    return "Backend is running 🚀"
 
-## ✅ Frontend Complete
-| Page | Link |
-|------|------|
-| 🏠 Home | [index.html](templates/index.html) |
-| 📝 Submit | [submit.html](templates/submit.html) |
-| 🔍 Track | [track.html](templates/track.html) |
-| 🔐 Admin Login | [admin_login.html](templates/admin_login.html) |
+@app.route('/submit', methods=['POST'])
+def submit_issue():
+    data = request.json
+    
+    issue = {
+        "name": data.get("name"),
+        "location": data.get("location"),
+        "issue": data.get("issue"),
+        "status": "Pending"
+    }
+    
+    return jsonify({
+        "message": "Issue submitted successfully",
+        "data": issue
+    })
 
-## ⏳ Backend (Python Flask Needed)
+if __name__ == '__main__':
+    app.run(debug=True)
