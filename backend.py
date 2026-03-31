@@ -3,6 +3,7 @@ import sqlite3
 import uuid
 from datetime import datetime
 
+
 app = Flask(__name__)
 app.secret_key = 'grievance_hackathon_2026_secret'
 
